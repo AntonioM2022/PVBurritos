@@ -82,3 +82,7 @@ input{
     min-width: 25%;
     min-height: 2rem;
 }
+.botones a{
+    text-decoration: none;
+    color: white;
+}

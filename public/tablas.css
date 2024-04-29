@@ -1,0 +1,46 @@
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+table * {
+    border: 5px solid black;
+}
+
+th, td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para la cabecera de la tabla */
+th {
+    background-color: gray;
+    color: #333;
+}
+
+/* Estilos para las filas impares */
+tr:nth-child(odd) {
+    background-color: rgb(200, 200, 200);
+}
+
+/* Estilos para las filas pares */
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+/* Estilos para hacer la tabla responsive */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+    
+    th, td {
+        
+        width: 100%;
+    }
+    
+    th {
+        text-align: center;
+    }
+}
