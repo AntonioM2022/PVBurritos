@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto especificados */
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FF204E;
+    height: 100%;
+    width: 100%;
+}
+h1{
+    font-size: 3rem;
+    color: black;
+    font-weight: bold;
+}
+label{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.orden{
+    padding: 5%;
+    height: 100%;
+    width: 100%;
+}
+form{
+    height: 90%;
+    width: 100%;
+    padding: 2%;
+}
+
+.guisado{
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.refresco{
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.extras{
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.datos{
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+button{
+    border-radius: 10px;
+    min-width: 25%;
+    min-height: 2rem;
+    font-size: 20px;
+    background-color: #00224D;
+    color: white;
+    cursor: pointer;
+}
+select{
+    border-radius: 10px;
+    min-width: 25%;
+    max-width: 50%;
+    min-height: 2rem;
+}
+input{
+    border-radius: 10px;
+    max-width: 50%;
+    min-width: 25%;
+    min-height: 2rem;
+}

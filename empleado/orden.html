@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden</title>
+    <link rel="stylesheet" href="../public/menu.css">
+    <link rel="stylesheet" href="styles/orden.css">
+</head>
+<body>
+    <div class="menu">
+        <nav>
+            <ul>
+                <li><a href="">Burritos el cuate</a> <img src="../public/burrito-removebg-preview.png" alt=""></li>
+                <li><a href="#orden">Orden</a></li>
+                <li><a href="#corte">Corte</a></li>
+                <li><a href="#salir">Salir</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="principal">
+        <h1>Numero de orden</h1>
+        <p></p>
+
+        <form action="">
+            <div class="guisado">
+                <label for="">Guisado:</label>
+                <select name="guisado" id="guisado">
+                    <option value="25">Asada</option>
+                    <option value="25">Chicharron</option>
+                    <option value="25">Barbacoa</option>
+                    <option value="25">Deshebrada en rojo</option>
+                    <option value="25">Deshebrada en verde</option>
+                    <option value="25">Frijoles con queso</option>
+                </select>
+            </div>
+
+            <div class="refresco">
+                <label for="">Refrescos:</label>
+                <select name="refrescos" id="refrescos">
+                    <option value="15">Coca cola</option>
+                    <option value="15">Sprite</option>
+                    <option value="15">Mirinda</option>
+                    <option value="15">Toronja</option>
+                    <option value="15">Manzanita</option>
+                    <option value="15">Mirinda</option>
+                </select>
+            </div>
+
+            <div class="extras">
+                <label for="">Extras:</label>
+                <select name="extra" id="extra">
+                    <option value="15">Salsa</option>
+                    <option value="15">Chile curtido</option>
+                    <option value="15">Queso</option>
+                </select>
+            </div>
+
+            <div class="datos">
+                <label for="">Datos cliente:</label>
+                <input type="text" placeholder="Nombre">
+                <input type="tel" placeholder="Telefono">
+            </div>
+
+            <div class="botones">
+                <button type="submit">Agregar</button>
+                <button type="reset">Eliminar</button>
+                <button type="submit">Generar orden</button>
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
