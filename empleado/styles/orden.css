@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box; /* Incluye padding y border dentro del ancho y alto especificados */
 }
 
@@ -15,44 +15,121 @@ h1{
     color: black;
     font-weight: bold;
 }
+h2{
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    padding-left: 2%;
+}
+
+.burritos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+
+}
+.burrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espacia los elementos de manera uniforme a lo largo del eje principal */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal */
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px; /* Añade un poco de relleno alrededor de los elementos para darles más espacio */
+    background-color: #5D0E41;
+}
+.burrito img{
+    height: 80px;
+    width: 100px;
+}
+.burrito h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sodas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    
+
+}
+.soda{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espacia los elementos de manera uniforme a lo largo del eje principal */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal */
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px; /* Añade un poco de relleno alrededor de los elementos para darles más espacio */
+    background-color: #5D0E41;
+}
+.soda img{
+    height: 100px;
+    width: 100px;
+}
+.soda h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+.extras{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    
+
+}
+.extra{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Espacia los elementos de manera uniforme a lo largo del eje principal */
+    align-items: center; /* Centra los elementos a lo largo del eje transversal */
+    vertical-align: middle;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px; /* Añade un poco de relleno alrededor de los elementos para darles más espacio */
+    background-color: #5D0E41;
+    
+}
+.extra img{
+    height: 100px;
+    width: 100px;
+}
+.extra h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
 label{
     font-size: 2rem;
     font-weight: bold;
 }
-.orden{
-    padding: 5%;
-    height: 100%;
-    width: 100%;
-}
+
 form{
     height: 90%;
     width: 100%;
     padding: 2%;
 }
 
-.guisado{
-    padding-bottom: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.refresco{
-    padding-bottom: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.extras{
-    padding-bottom: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+
+
 .datos{
     padding-bottom: 5%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    padding-left: 2%;
 }
 
 .botones{
@@ -70,12 +147,7 @@ button{
     color: white;
     cursor: pointer;
 }
-select{
-    border-radius: 10px;
-    min-width: 25%;
-    max-width: 50%;
-    min-height: 2rem;
-}
+
 input{
     border-radius: 10px;
     max-width: 50%;
