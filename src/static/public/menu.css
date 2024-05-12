@@ -1,0 +1,55 @@
+/* Estilos generales para el body y el nav */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav {
+    background-color:#00224D ; /* Color de fondo del menú */
+    width: 100%; /* Se extiende a lo largo del ancho completo de la ventana */
+    display: flex;
+    justify-content: center; /* Centra los elementos del menú horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos del menú */
+}
+
+.menu ul {
+    list-style: none; /* Elimina los estilos de lista predeterminados */
+    display: flex; /* Muestra los elementos de la lista en línea */
+    width: 100%; /* Extiende la lista a lo largo del ancho completo del nav */
+    justify-content: space-around; /* Distribuye el espacio entre los elementos uniformemente */
+    padding: 0; /* Elimina el padding predeterminado */
+    margin: 0; /* Elimina el margin predeterminado */
+}
+
+.menu li {
+    display: flex; /* Permite que los elementos de la lista se manejen como cajas flexibles */
+    align-items: center; /* Alinea verticalmente el contenido de cada elemento de la lista */
+}
+
+.menu li img {
+    height: 50px; /* Altura del logo para que no sea demasiado grande o pequeño */
+}
+
+.menu a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Color del texto para los enlaces */
+    font-family: Arial, Helvetica, sans-serif; /* Tipo de letra para los enlaces */
+    font-size: 1.5rem; /* Tamaño de fuente para los enlaces */
+    padding: 0% 1%; /* Padding para hacer los enlaces más clickeables */
+}
+
+/* Cambia el color de fondo de los enlaces al pasar el mouse */
+.menu a:hover {
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
+.menu a:first-child {
+    padding: 0px; /* Elimina el relleno derecho del primer elemento li */
+}
+
+.menu li img {
+    height: 50px; /* Altura del logo para que no sea demasiado grande o pequeño */
+    margin: 0; /* Elimina cualquier margen alrededor de la imagen */
+    padding: 0; /* Elimina cualquier relleno alrededor de la imagen */
+}

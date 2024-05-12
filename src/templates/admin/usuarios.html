@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear usuarios</title>
+    <link rel="stylesheet" href="../../static/public/menu.css" />
+    <link rel="stylesheet" href="styles/usuarios.css" />
+  </head>
+  <body>
+    <div class="menu">
+      <nav>
+        <ul>
+          <li>
+            <a href="">Burritos el cuate</a
+            ><img src="../../static/public/burrito-removebg-preview.png" alt="" />
+          </li>
+          <li><a href="http://127.0.0.1:5000/admin/usuarios">Usuarios</a></li>
+          <li><a href="http://127.0.0.1:5000/admin/ventas">Ventas</a></li>
+          <li><a href="http://127.0.0.1:5000/sesion">Salir</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="principal">
+      <h1>Crear usuarios</h1>
+      <form action="">
+        <div class="Buscar">
+            <label for="">Buscar</label>
+            <input type="text" />
+            <div class="botones">
+                <button>Eliminar</button>
+                <button>Modificar</button>
+            </div>
+        </div>
+      </form>
+      <form action="" method="POST" class="crear">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required />
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" required />
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required />
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" id="password" required />
+        <label for="tipo">Tipo:</label>
+        <select name="tipo" id="tipo">
+          <option value="admin">Administrador</option>
+          <option value="empleado">Empleado</option>
+        </select>
+        <button>Crear usuario</button>
+      </form>
+    </div>
+  </body>
+</html>
