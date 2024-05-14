@@ -90,12 +90,25 @@ def crearOrden():
         return jsonify({'mensaje': "Orden creada"})
     except Exception as ex:
         return 'No se pudo enviar la orden'
+    
+
+
         
 """""
-
+@app.route('/enviar/usuario', methods= {'POST'}) 
+def crearUsuario():
+    try:
+        #print (request.json)
+        cursor= conexion.connection.cursor()
+        sql = INSERT INTO users(nombre, apellido, email, contrasena, tipo)  VALUES ('{0}','{1}', '{2}', {3}, {4}).format(request.json['nombre'], request.json['apellido'], request.json['email'], request.json['contrasena'], request.json['tipo'])
+        cursor.execute(sql)
+        conexion.connection.commit()#confirma la accion de insertar
+        return jsonify({'mensaje': "Usuario creado"})
+    except Exception as ex:
+        return 'No se pudo crear el usuario'
 """
 #rutas para los renders de los html
-@app.route('/sesion')
+@app.route('/sesion', methods=['GET', 'POST'])
 def sesion():
     return render_template('index.html')
 
@@ -104,14 +117,37 @@ def sesion():
 def ventas():
     return render_template('admin/ventas.html')
 
-@app.route('/admin/usuarios')
+@app.route('/admin/usuarios', methods=['GET', 'POST'])
 def usrs():
-    return render_template('admin/usuarios.html')
+    if request.method == 'POST':
+        
+        try:
+            cursor= conexion.connection.cursor()
+            sql = """INSERT INTO users(nombre, apellido, email, contrasena, tipo)  VALUES ('{0}','{1}', '{2}', {3}, {4})""".format(request.json['nombre'], request.json['apellido'], request.json['email'], request.json['contrasena'], request.json['tipo'])
+            cursor.execute(sql)
+            conexion.connection.commit()#confirma la accion de insertar
+            return jsonify({'mensaje': "Usuario creado"})
+        except Exception as ex:
+                    return 'No se pudo crear el usuario'
+    else:
+        # Para solicitudes GET, simplemente renderiza la página HTML
+        return render_template('admin/usuarios.html')
+
 
 #rutas empleados
-@app.route('/empleado/orden')
+@app.route('/empleado/orden', methods=['GET', 'POST'])
 def orden():
-    return render_template('empleado/orden.html')
+    if request.method == 'POST':
+        try:
+            cursor= conexion.connection.cursor()
+            sql = """INSERT INTO orden (nombre, telefono, fecha, producto, cantidad, total) VALUES('{0}', {1}, '{2}', '{3}', {4}, {5})""".format(request.json['nombre'], request.json['telefono'], request.json['fecha'], request.json['producto'], request.json['cantidad'], request.json['total'])
+            cursor.execute(sql)
+            conexion.connection.commit()
+            return jsonify({'mensaje': "Orden creada"})
+        except Exception as ex:
+            return ('No se pudo enviar la orden')
+    else:
+        return render_template('empleado/orden.html')
 
 @app.route('/empleado/detalleOrden')
 def detalleOrden():

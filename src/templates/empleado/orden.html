@@ -31,27 +31,27 @@
                     <div class= "burrito">
                         <h3>Asada</h3>
                         <img src="../../static/public/burritos/asada.png" alt="imagen burrito">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="asada">
                     </div>
                     <div class= "burrito">
                         <h3>Barbacoa</h3>
                         <img src="../../static/public/burritos/barbacoa.png" alt="imagen burrito">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="barbacoa">
                     </div>
                     <div class= "burrito">
                         <h3>Chicharron</h3>
                         <img src="../../static/public/burritos/chicharron.png" alt="imagen burrito">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="chicharron">
                     </div>
                     <div class= "burrito">
                         <h3>Deshebrada rojo</h3>
                         <img src="../../static/public/burritos/d roja.png" alt="imagen burrito">
-                        <input type="number"placeholder="0">
+                        <input type="number"placeholder="0" required id="rojo">
                     </div>
                     <div class= "burrito">
                         <h3>Deshebrada verde</h3>
                         <img src="../../static/public/burritos/d verde.png" alt="imagen burrito">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="verde">
                     </div>
                 </div>
             <h2>Refrescos</h2>
@@ -59,27 +59,27 @@
                     <div class= "soda">
                         <h3>coca-cola</h3>
                         <img src="../../static/public/sodas/coca.png" alt="imagen soda">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="coca">
                     </div>
                     <div class= "soda">
                         <h3>Sprite</h3>
                         <img src="../../static/public/sodas/sprite.png" alt="imagen soda">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="sprite">
                     </div>
                     <div class= "soda">
                         <h3>Squirt</h3>
                         <img src="../../static/public/sodas/squirt.png" alt="imagen soda">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="squirt">
                     </div>
                     <div class= "soda">
                         <h3>Manzanita</h3>
                         <img src="../../static/public/sodas/manzana.png" alt="imagen soda">
-                        <input type="number"placeholder="0">
+                        <input type="number"placeholder="0" required id="manzanita">
                     </div>
                     <div class= "soda">
                         <h3>Mirinda</h3>
                         <img src="../../static/public/sodas/mirinda.png" alt="imagen soda">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="mirinda">
                     </div>
                 </div>
                 <h2>Extras</h2>
@@ -87,35 +87,35 @@
                     <div class= "extra">
                         <h3>Salsa</h3>
                         <img src="../../static/public/extra/salsas.png" alt="imagen salsa">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="salsa">
                     </div>
                     <div class= "extra">
                         <h3>Chile curtido</h3>
                         <img src="../../static/public/extra/curtido.png" alt="imagen chile curtido">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="curtido">
                     </div>
                     <div class= "extra">
                         <h3>Queso</h3>
                         <img src="../../static/public/extra/queso.png" alt="imagen queso">
-                        <input type="number" placeholder="0">
+                        <input type="number" placeholder="0" required id="queso">
                     </div>
                 </div>
 
 
             <div class="datos">
                 <label for="">Datos cliente:</label>
-                <input type="text" placeholder="Nombre">
-                <input type="tel" placeholder="Telefono">
+                <input type="text" placeholder="Nombre" id="nombre">
+                <input type="tel" placeholder="Telefono" id="telefono">
             </div>
 
             <div class="botones">
-                <button type="submit">Agregar</button>
-                <button type="reset">Eliminar</button>
+                <button type="submit" id="agregarBtn">Agregar</button>
+                <button type="reset" id="eliminarBtn">Eliminar</button>
             </div>
 
         </form>
     </div>
-
+    <script src="../../static/empleado/orden.js"></script>
     
 </body>
 </html>
