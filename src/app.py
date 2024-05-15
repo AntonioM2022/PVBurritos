@@ -65,6 +65,28 @@ def ordenes():
         if cursor:
             cursor.close()
 
+@app.route('/datos/ultimaOrden', methods=['GET'])
+def ultimaOrden():
+    cursor = None
+    try:
+        cursor = conexion.connection.cursor()
+        sql = 'SELECT MAX(idorden) AS idorden FROM orden;'
+        cursor.execute(sql)
+        datos = cursor.fetchall()
+        ordenes = []
+        for fila in datos:
+            orden = {
+                'numero_Orden': fila[0]
+                
+            }
+            ordenes.append(orden)
+        return jsonify(ordenes)
+    except Exception as ex:
+        return jsonify({'error': 'No se puede obtener los datos de las ordenes', 'exception': str(ex)}), 500
+    finally:
+        if cursor:
+            cursor.close()
+
 
 #Ruta de los post
 @app.route('/enviar/producto', methods= {'POST'}) 
