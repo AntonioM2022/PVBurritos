@@ -88,6 +88,33 @@ def ultimaOrden():
             cursor.close()
 
 
+@app.route('/datos/usrs', methods=['GET'])
+def datosusrs():
+    cursor = None
+    try:
+        cursor = conexion.connection.cursor()
+        sql = 'SELECT * FROM users'
+        cursor.execute(sql)
+        datos = cursor.fetchall()
+        usrs = []
+        for fila in datos:
+            us = {
+                'idusers': fila[0],
+                'nombre': fila[0],
+                'apellido': fila[1],
+                'email': fila[2],
+                'contrasena': fila[3],
+                'tipo': fila[4]
+                
+            }
+            usrs.append(us)
+        return jsonify(usrs)
+    except Exception as ex:
+        return jsonify({'error': 'No se puede obtener los datos de las ordenes', 'exception': str(ex)}), 500
+    finally:
+        if cursor:
+            cursor.close()
+
 #Ruta de los post
 @app.route('/enviar/producto', methods= {'POST'}) 
 def crearProducto():
@@ -155,6 +182,9 @@ def usrs():
         # Para solicitudes GET, simplemente renderiza la página HTML
         return render_template('admin/usuarios.html')
 
+@app.route('/admin/detallesUsuarios', methods=['GET', 'POST'])
+def detallesUsuarios():
+    return render_template('admin/eusr.html')
 
 #rutas empleados
 @app.route('/empleado/orden', methods=['GET', 'POST'])

@@ -6,7 +6,9 @@ function cargarDatos() {
     fetch('http://127.0.0.1:5000/datos/ordenes')
         .then(response => response.json())
         .then(data => {
-            const ordenesAgrupadas = agruparOrdenesPorNombre(data);
+            const hoy = new Date().toDateString();
+            const ordenesDeHoy = data.filter(orden => new Date(orden.fecha).toDateString() === hoy);
+            const ordenesAgrupadas = agruparOrdenesPorNombre(ordenesDeHoy);
             actualizarTabla(ordenesAgrupadas);
         })
         .catch(error => console.error('Error al cargar los datos:', error));
@@ -36,7 +38,8 @@ function agruparOrdenesPorNombre(ordenes) {
 }
 
 function actualizarTabla(datos) {
-    const tabla = document.querySelector('table');
+    const tabla = document.querySelector('table tbody'); // Asegúrate de seleccionar tbody
+    tabla.innerHTML = ''; // Limpia la tabla antes de agregar nuevas filas
 
     datos.forEach(grupo => {
         grupo.ordenes.forEach((orden, index) => {

@@ -12,24 +12,29 @@ function cargarDatos() {
 }
 
 function actualizarTabla(datos) {
-    const tabla = document.querySelector('table');
+    const tabla = document.querySelector('table tbody'); // Asegúrate de seleccionar tbody
     let sumaTotal = 0;
+    const hoy = new Date().toDateString(); // Obtener la fecha actual en formato legible
 
     datos.forEach(dato => {
-        const fila = tabla.insertRow();
+        const fechaOrden = new Date(dato.fecha).toDateString(); // Convertir la fecha de la orden a formato legible
 
-        const celdaNoOrdenes = fila.insertCell();
-        celdaNoOrdenes.textContent = dato.numero_Orden;
+        if (fechaOrden === hoy) {
+            const fila = tabla.insertRow();
 
-        const producto = fila.insertCell();
-        producto.textContent = dato.producto;
+            const celdaNoOrdenes = fila.insertCell();
+            celdaNoOrdenes.textContent = dato.numero_Orden;
 
-        const cantidad = fila.insertCell();
-        cantidad.textContent = dato.cantidad;
+            const producto = fila.insertCell();
+            producto.textContent = dato.producto;
 
-        const totalOrden = fila.insertCell();
-        totalOrden.textContent = `$${dato.total_orden}`;
-        sumaTotal += dato.total_orden;
+            const cantidad = fila.insertCell();
+            cantidad.textContent = dato.cantidad;
+
+            const totalOrden = fila.insertCell();
+            totalOrden.textContent = `$${dato.total_orden}`;
+            sumaTotal += dato.total_orden;
+        }
     });
 
     const totalSuma = document.getElementById('totalSuma');
